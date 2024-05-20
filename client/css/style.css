@@ -3,3 +3,7 @@
   --secondary: #dadada; 
   --tertiary: black;
 } 
+
+body{
+    background-color: var(--primary);
+}
