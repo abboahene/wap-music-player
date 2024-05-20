@@ -1,1 +1,5 @@
-/* #FF6500 */
+:root {
+  --primary: #FF6500;
+  --secondary: #dadada; 
+  --tertiary: black;
+} 
