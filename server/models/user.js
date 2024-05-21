@@ -1,4 +1,4 @@
-
+const Song = require('./song');
 
 class User {
     constructor(id, name, password, playList) {
@@ -36,11 +36,14 @@ class User {
         }
     }
 
-    static addSongToPlayList(name, song) {
-        const user = user.find(u => u.name === name);
+    static addSongToPlayList(name, songId) {
+        const user = users.find(u => u.name === name);
         if (user) {
-            if (song) {
-                user.playList.push(song);
+            if (songId) {
+                if(user.playList.find(s=>s.id == songId)){
+                    throw new Error('This song already added to the playlists');
+                }
+                user.playList.push(Song.getSong(songId));
                 return {
                     playlist: user.playList
                 };
@@ -56,9 +59,9 @@ class User {
 }
 
 const users = [
-    new User(1, 'Benefo', '12345', null),
-    new User(2, 'Gam', '12345', null),
-    new User(3, 'Htet', '12345', null)
+    new User(1, 'Benefo', '12345', []),
+    new User(2, 'Gam', '12345', []),
+    new User(3, 'Htet', '12345', [])
 ];
 
 

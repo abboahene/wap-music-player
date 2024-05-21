@@ -18,3 +18,11 @@ exports.getPlayList = (req,res,next)=>{
     res.status(200).json(result);
 }
 
+exports.addSongToPlayList = (req,res,next)=>{
+    const result = {
+        status:'success',
+        data:User.addSongToPlayList(req.params.username,req.params.songId)
+    }
+
+    res.status(200).json(result);
+}

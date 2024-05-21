@@ -11,6 +11,15 @@ class Song{
         return songs;
     }
 
+    static getSong(songId){
+        const song = songs.find(s=>s.id == songId);
+        if(song){
+            return song;
+        }else{
+            throw new Error('Song not found with ID: '+songId);
+        }
+    }
+
 }
 
 const songs = [
