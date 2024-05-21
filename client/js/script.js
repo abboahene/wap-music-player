@@ -15,11 +15,15 @@ window.onload = function() {
         });
         const result = await response.json();
         if(result.status === 'success'){
-            alert('User logged in successfully');
+            document.getElementById('incorrect').style.display = 'none';
             document.getElementById('container').style.display = 'none';
             document.getElementById('another-page').style.display = 'block';
         }
-
+        else{
+            document.getElementById('incorrect').style.display = 'block';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+        }
     });
     document.getElementById('logout').addEventListener('click', function(event) {
         event.preventDefault();
