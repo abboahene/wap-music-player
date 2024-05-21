@@ -1,8 +1,25 @@
 window.onload = function() {
-    document.getElementById('login').addEventListener('submit', function(event) {
+    document.getElementById('login').addEventListener('submit', async function(event) {
         event.preventDefault();
-        document.getElementById('container').style.display = 'none';
-        document.getElementById('another-page').style.display = 'block';
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const response = await fetch('http://localhost:3000/users/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                username,
+                password
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+        const result = await response.json();
+        if(result.status === 'success'){
+            alert('User logged in successfully');
+            document.getElementById('container').style.display = 'none';
+            document.getElementById('another-page').style.display = 'block';
+        }
+
     });
     document.getElementById('logout').addEventListener('click', function(event) {
         event.preventDefault();
