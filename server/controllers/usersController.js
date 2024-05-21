@@ -8,3 +8,13 @@ exports.login = (req,res,next)=>{
 
     res.status(200).json(result);
 }
+
+exports.getPlayList = (req,res,next)=>{
+    const result = {
+        status:'success',
+        data:User.getPlayList(req.params.username)
+    }
+
+    res.status(200).json(result);
+}
+
