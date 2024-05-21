@@ -10,14 +10,15 @@ class User {
 
     static login(name, password){
         const user = users.find(u => u.name === name && u.password === password) ;
+        const date = new Date();
 
         if(user){
-            return `${name}@${new Date()}`;
+            return `${name}@${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
         }
         else{
             throw new Error('Username or Password is incorrect');
         }
-    }
+    }s
 
 }
 
@@ -29,3 +30,4 @@ const users = [
 
 
 
+module.exports =User;
