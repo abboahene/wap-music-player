@@ -13,12 +13,17 @@ class User {
         const date = new Date();
 
         if(user){
-            return `${name}@${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+            const data = {
+                username:user.name,
+                token:`${name}@${date.toLocaleDateString()} ${date.toLocaleTimeString()}`
+            }
+
+            return data;
         }
         else{
             throw new Error('Username or Password is incorrect');
         }
-    }s
+    }
 
 }
 

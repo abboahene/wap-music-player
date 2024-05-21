@@ -1,5 +1,9 @@
 const Song = require('../models/song');
 
 exports.getAll = (req,res,next)=>{
-    res.status(200).json(Song.getAll());
+    const data ={
+        status:'success',
+        data:Song.getAll()
+    }
+    res.status(200).json(data);
 }
