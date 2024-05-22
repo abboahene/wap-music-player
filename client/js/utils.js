@@ -1,6 +1,8 @@
 let currentPage = "login";
 let allSongs = [];
 let allPlaylistSongs = [];
+let currentSong = {};
+
 const showPage = async (page) => {
   if (page === "main") {
     if (currentPage !== "main") {

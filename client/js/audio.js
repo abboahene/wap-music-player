@@ -11,8 +11,7 @@ const artistNameDiv = document.getElementById("artist-name");
 
 const playerContainer = document.getElementById("player-container");
 const inputRange = document.getElementById("song-range-input");
-
-let currentSong = {};
+// let currentSong = {};
 let audioPlayingMode = "repeat-all";
 
 function changeAudio(thisArg, songPath) {
@@ -75,13 +74,24 @@ mainPlayImg.addEventListener("click", function toggleAudioPlay() {
 next.addEventListener("click", function playNext() {
   if (!currentSong.data) return;
 
-  const currentSongIndex = allPlaylistSongs.findIndex(
+  let currentSongIndex = allPlaylistSongs.findIndex(
     (s) => s.id === currentSong.data.id
   );
   if (currentSongIndex + 1 > allPlaylistSongs.length - 1) {
-    return;
+    currentSongIndex = -1;
+    //return;
   }
-  const nextSong = allPlaylistSongs[currentSongIndex + 1];
+  let nextSong;
+  console.log(audioPlayingMode);
+  if(audioPlayingMode === 'shuffle'){
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * allPlaylistSongs.length);
+    } while (randomIndex === currentSongIndex);
+     nextSong = allPlaylistSongs[randomIndex];
+  }else{
+    nextSong = allPlaylistSongs[currentSongIndex + 1];
+  }
   const nextSongImgEl = document.getElementById(
     `pp${(nextSong.title + nextSong.singer + nextSong.id).replace(" ", "")}`
   );
@@ -92,13 +102,28 @@ next.addEventListener("click", function playNext() {
 prev.addEventListener("click", function playPrev() {
   if (!currentSong.data) return;
 
-  const currentSongIndex = allPlaylistSongs.findIndex(
+  let currentSongIndex = allPlaylistSongs.findIndex(
     (s) => s.id === currentSong.data.id
   );
   if (currentSongIndex - 1 < 0) {
-    return;
+    currentSongIndex = allPlaylistSongs.length;
+    //return;
   }
-  const prevSong = allPlaylistSongs[currentSongIndex - 1];
+
+  let prevSong;
+  console.log(audioPlayingMode);
+  if(audioPlayingMode === 'shuffle'){
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * allPlaylistSongs.length);
+    } while (randomIndex === currentSongIndex);
+     prevSong = allPlaylistSongs[randomIndex];
+  }else{
+    prevSong = allPlaylistSongs[currentSongIndex - 1];
+  }
+
+  //const prevSong = allPlaylistSongs[currentSongIndex - 1];
+  console.log(prevSong);
   const prevSongImgEl = document.getElementById(
     `pp${(prevSong.title + prevSong.singer + prevSong.id).replace(" ", "")}`
   );
