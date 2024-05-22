@@ -12,6 +12,10 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#main-page{
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -24,7 +28,7 @@ header {
   width: 100px;
 }
 
-.logout-btn {
+#logout-btn {
   font-size: large;
   padding: 8px 14px;
   border: none;
@@ -129,7 +133,9 @@ footer {
   bottom: 0;
   width: 100%;
 }
-
+#audio{
+  display: none;
+}
 #player-container {
   --input-range-before-width: 0%;
   display: flex;
@@ -160,6 +166,13 @@ footer {
   cursor: pointer;
 }
 
+#repeat-one{
+  display: none;
+}
+#shuffle{ 
+  display: none;
+}
+
 .player-song {
   flex-basis: 75%;
   background-color: white;
@@ -167,12 +180,12 @@ footer {
   padding: 20px;
 }
 
-.song-title {
+#song-title {
   font-size: medium;
   font-weight: bold;
 }
 
-.artist-name {
+#artist-name {
   font-size: small;
 }
 

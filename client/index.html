@@ -1,120 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hag</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <header>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="./css/login.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- This is the login page start  -->
+    <div id="login-page-container">
+      <div class="container">
+        <div class="form-container">
+          <img id="logo" src="./assets/logo.png" alt="logo" />
+          <h1 id="welcome">Welcome to the HaG Music</h1>
+          <div class="login-form">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="username"
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="password"
+            />
+            <p id="incorrect" style="display: none">
+              Username or Password is incorrect
+            </p>
+            <button id="login">Login</button>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="./assets/guitar.jpeg" alt="Woman listening to music" />
+        </div>
+      </div>
+    </div>
+    <!-- This is the login page end  -->
+
+    <!-- This is the main page start  -->
+    <div id="main-page">
+      <header>
         <div class="logo-container">
-         <img class="logo-img" src="./assets/logo.png" alt="logo">
+          <img class="logo-img" src="./assets/logo.png" alt="logo" />
         </div>
         <div class="logout-container">
-         <button class="logout-btn">
-             Logout
-         </button>
+          <button id="logout-btn">Logout</button>
         </div>
-     </header>
-     <main>
-         <section>
-             <h3 class="section-header">Songs you may like</h3>
-             <table>
-                 <tr>
-                     <th>Id</th>
-                     <th>Title</th>
-                     <th>Released Date</th>
-                     <th>Actions</th>
-                 </tr>
-                     <tr>
-                         <td>React.js</td>
-                         <td>9.99</td>
-                         <td>8</td>
-                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
-                     </tr>
-                     <tr>
-                         <td>Node.js</td>
-                         <td>19.99</td>
-                         <td>5</td>
-                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
-                     </tr>
-                     <tr>
-                         <td>Node.js</td>
-                         <td>29.99</td>
-                         <td>13</td>
-                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
-                     </tr>
-             </table>
-         </section>
-         <section>
-             <h3 class="section-header">Your playlist</h3>
-             <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Released Date</th>
-                    <th>Actions</th>
-                </tr>
-                    <tr>
-                        <td>React.js</td>
-                        <td>9.99</td>
-                        <td>8</td>
-                        <td>
-                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
-                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Node.js</td>
-                        <td>19.99</td>
-                        <td>5</td>
-                        <td>
-                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
-                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Node.js</td>
-                        <td>29.99</td>
-                        <td>13</td>
-                        <td>
-                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
-                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
-                        </td>
-                    </tr>
-            </table>
-         </section>
-     </main>
-     <!-- player -->
-    <footer>
+      </header>
+      <main>
+        <section>
+          <h3 class="section-header">Songs you may like</h3>
+          <table id="all-songs">    
+          </table>
+        </section>
+        <section>
+          <h3 class="section-header">Your playlist</h3>
+          <table id="playlist">
+          </table>
+        </section>
+      </main>
+      <!-- player -->
+      <footer>
+        <audio id="audio" src=""></audio>
         <div id="player-container">
-            <div class="player-controls">
-                <div class="player-control previous">
-                    <img class="player-control-img" src="./assets/svgs/previous.svg" alt="">
-                </div>
-                <div class="player-control play-pause">
-                    <img class="player-control-img" src="./assets/svgs/pause.svg" alt="">
-                </div>
-                <div class="player-control next">
-                    <img class="player-control-img" src="./assets/svgs/next.svg" alt="">
-                </div>
+          <div class="player-controls">
+            <div class="player-control previous">
+              <img
+              id="prev"
+                class="player-control-img"
+                src="./assets/svgs/previous.svg"
+                alt=""
+              />
             </div>
-            <div class="player-song">
-                <div class="details">
-                    <div class="song-title">Attention</div>
-                    <div class="artist-name">Bruno Mars</div>
-                </div>
-                <div class="range">
-                    <input type="range" id="song-range-input" max="100" value="0">
-                </div>
+            <div class="player-control play-pause">
+              <img
+                id="main-play-btn"
+                class="player-control-img"
+                src="./assets/svgs/play.svg"
+                alt=""
+              />
             </div>
-            <div class="player-mode">
-                <img class="player-control-img" src="./assets/svgs/shuffle.svg" alt="">
+            <div class="player-control next">
+              <img
+                id="next"
+                class="player-control-img"
+                src="./assets/svgs/next.svg"
+                alt=""
+              />
             </div>
+          </div>
+          <div class="player-song">
+            <div class="details">
+              <div id="song-title">Attention</div>
+              <div id="artist-name">Bruno Mars</div>
+            </div>
+            <div class="range">
+              <input type="range" id="song-range-input" max="100" value="0" />
+            </div>
+          </div>
+          <div class="player-mode">
+            <img
+                id="repeat-one"
+              class="player-control-img"
+              src="./assets/svgs/repeat-once.svg"
+              alt=""
+            />
+            <img
+            id="repeat-all"
+              class="player-control-img"
+              src="./assets/svgs/repeat.svg"
+              alt=""
+            />
+            <img
+            id="shuffle"
+              class="player-control-img"
+              src="./assets/svgs/shuffle.svg"
+              alt=""
+            />
+          </div>
         </div>
-    </footer>
-    <script src="./js/script.js"></script>
-</body>
-</html>
+      </footer>
+    </div>
+    <!-- This is the main page end  -->
 
+    <!-- scripts -->
+    <script src="./js/utils.js"></script>
+    <script src="./js/http.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/main-page.js"></script>
+    <script src="./js/audio.js"></script>
+
+  </body>
+</html>
