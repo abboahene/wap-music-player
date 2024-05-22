@@ -32,3 +32,18 @@ window.onload = function() {
         window.location.reload();
     });
 }
+
+
+
+const playIconContainer = document.getElementById('play-icon');
+const playerContainer = document.getElementById('player-container');
+const inputRange = document.getElementById('song-range-input');
+let playState = 'play'; // play or plause
+
+const showRangeProgress = (rangeInput) => {
+    playerContainer.style.setProperty('--input-range-before-width', rangeInput.value / rangeInput.max * 100 + '%');
+}
+
+inputRange.addEventListener('input', (e) => {
+    showRangeProgress(e.target);
+});

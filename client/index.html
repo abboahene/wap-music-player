@@ -31,19 +31,19 @@
                          <td>React.js</td>
                          <td>9.99</td>
                          <td>8</td>
-                         <td><button class="add-to-cart"></button></td>
+                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
                      </tr>
                      <tr>
                          <td>Node.js</td>
                          <td>19.99</td>
                          <td>5</td>
-                         <td><button class="add-to-cart"></button></td>
+                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
                      </tr>
                      <tr>
                          <td>Node.js</td>
                          <td>29.99</td>
                          <td>13</td>
-                         <td><button class="add-to-cart"></button></td>
+                         <td><img class="action-icon" src="./assets/svgs/add.svg" alt=""></td>
                      </tr>
              </table>
          </section>
@@ -51,35 +51,44 @@
              <h3 class="section-header">Your playlist</h3>
              <table>
                 <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Stock</th>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Released Date</th>
                     <th>Actions</th>
                 </tr>
                     <tr>
                         <td>React.js</td>
                         <td>9.99</td>
                         <td>8</td>
-                        <td><button class="add-to-cart"></button></td>
+                        <td>
+                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
+                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
+                        </td>
                     </tr>
                     <tr>
                         <td>Node.js</td>
                         <td>19.99</td>
                         <td>5</td>
-                        <td><button class="add-to-cart"></button></td>
+                        <td>
+                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
+                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
+                        </td>
                     </tr>
                     <tr>
                         <td>Node.js</td>
                         <td>29.99</td>
                         <td>13</td>
-                        <td><button class="add-to-cart"></button></td>
+                        <td>
+                            <img class="action-icon" src="./assets/svgs/minus-primary.svg" alt="">
+                            <img class="action-icon" src="./assets/svgs/play-primary.svg" alt="">
+                        </td>
                     </tr>
             </table>
          </section>
      </main>
      <!-- player -->
     <footer>
-        <div class="player-container">
+        <div id="player-container">
             <div class="player-controls">
                 <div class="player-control previous">
                     <img class="player-control-img" src="./assets/svgs/previous.svg" alt="">
@@ -97,7 +106,7 @@
                     <div class="artist-name">Bruno Mars</div>
                 </div>
                 <div class="range">
-                    <input class="range-input" type="range" id="song-range">
+                    <input type="range" id="song-range-input" max="100" value="0">
                 </div>
             </div>
             <div class="player-mode">
