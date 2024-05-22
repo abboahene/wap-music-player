@@ -16,7 +16,7 @@ window.onload = function() {
         const result = await response.json();
         if(result.status === 'success'){
             document.getElementById('incorrect').style.display = 'none';
-            document.getElementById('container').style.display = 'none';
+            document.getElementById('login-page-container').style.display = 'none';
             document.getElementById('another-page').style.display = 'block';
         }
         else{
@@ -27,7 +27,7 @@ window.onload = function() {
     });
     document.getElementById('logout').addEventListener('click', function(event) {
         event.preventDefault();
-        document.getElementById('container').style.display = 'block';
+        document.getElementById('login-page-container').style.display = 'block';
         document.getElementById('another-page').style.display = 'none';
         window.location.reload();
     });
