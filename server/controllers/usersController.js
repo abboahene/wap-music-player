@@ -12,7 +12,7 @@ exports.login = (req,res,next)=>{
 exports.getPlayList = (req,res,next)=>{
     const result = {
         status:'success',
-        data:User.getPlayList(req.params.username)
+        data:User.getPlayList(req.username)
     }
 
     res.status(200).json(result);
@@ -21,7 +21,7 @@ exports.getPlayList = (req,res,next)=>{
 exports.addSongToPlayList = (req,res,next)=>{
     const result = {
         status:'success',
-        data:User.addSongToPlayList(req.params.username,req.params.songId)
+        data:User.addSongToPlayList(req.username,req.params.songId)
     }
 
     res.status(200).json(result);

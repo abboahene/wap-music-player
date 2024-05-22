@@ -1,4 +1,5 @@
 GET http://localhost:3000/songs
+Authorization: Gam@5/21/2024 9:56:25 PM
 
 ###
 POST http://localhost:3000/users/login
@@ -6,13 +7,15 @@ Content-Type: application/json
 
 {
     "username":"Gam",
-    "password":"1234"
+    "password":"12345"
 }
 
 
 
 ###Get playlist from user
-GET http://localhost:3000/users/Gam/playlists
+GET http://localhost:3000/users/playlists
+Authorization: Gam@5/21/2024 9:56:25 PM
 
 ### add song to playlist for user
-POST http://localhost:3000/users/Gam/playlists/2
+POST http://localhost:3000/users/playlists/2
+Authorization: Gam@5/21/2024 9:56:25 PM

@@ -56,6 +56,14 @@ class User {
         }
     }
 
+    static checkUser(name){
+        const u = users.find(u=>u.name === name);
+        if(u){
+            return true;
+        }
+        throw new Error('Authentication failed!');
+    }
+
 }
 
 const users = [
