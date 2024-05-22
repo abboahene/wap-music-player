@@ -26,3 +26,12 @@ exports.addSongToPlayList = (req,res,next)=>{
 
     res.status(200).json(result);
 }
+
+exports.deleteSongFromPlayList = (req,res,next)=>{
+    const result = {
+        status:'success',
+        data:User.deleteSongFromPlayList(req.username,req.params.songId)
+    }
+
+    res.status(200).json(result);
+}

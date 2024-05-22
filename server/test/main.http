@@ -19,3 +19,7 @@ Authorization: Gam@5/21/2024 9:56:25 PM
 ### add song to playlist for user
 POST http://localhost:3000/users/playlists/2
 Authorization: Gam@5/21/2024 9:56:25 PM
+
+### remove song from playlist 
+PUT http://localhost:3000/users/playlists/2
+Authorization: Gam@5/21/2024 9:56:25 PM

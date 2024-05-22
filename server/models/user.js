@@ -56,6 +56,29 @@ class User {
         }
     }
 
+    static deleteSongFromPlayList(name,songId){
+        const user = users.find(u => u.name === name);
+        if (user) {
+            if (songId) {
+                const index = user.playList.findIndex(s=>s.id==songId);
+                if(index>-1){
+                    user.playList.splice(index,1);
+                    return {
+                        playlist: user.playList
+                    };
+                }else{
+                    throw new Error('Song not found with Id: '+songId);
+                }
+                
+            } else {
+                throw new Error('Song cannot be empty!');
+            }
+
+        } else {
+            throw new Error('User not found!')
+        }
+    }
+
     static checkUser(name){
         const u = users.find(u=>u.name === name);
         if(u){
